@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "apps/account"
+		},
+		{
+			"path": "apps/customer"
+		},
+		{
+			"path": "apps/gateway"
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+	},
+	"extensions": {
+		"recommendations": [
+			"dbaeumer.vscode-eslint",
+			"esbenp.prettier-vscode",
+			"eamodio.gitlens",
+			"mhutchie.git-graph",
+			"orta.vscode-jest",
+			"firsttris.vscode-jest-runner",
+			"mikestead.dotenv",
+			"graphql.vscode-graphql"
+		]
+	}
+}

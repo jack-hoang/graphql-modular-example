@@ -1,0 +1,23 @@
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 120,
+
+  "overrides": [
+    {
+      "files": ".editorConfig",
+      "options": { "parser": "yaml" }
+    },
+    {
+      "files": "README",
+      "options": {
+        "parser": "markdown"
+      }
+    }
+  ]
+}

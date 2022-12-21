@@ -1,0 +1,27 @@
+{
+  "name": "graphql-modular-example",
+  "version": "1.0.0",
+  "description": "GraphQL Example Monorepo",
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --config .prettierrc --ignore-path ./.gitignore \"**/*.ts\" --write",
+    "lint": "eslint **/*.ts --no-ignore",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "5.46.1",
+    "@typescript-eslint/parser": "5.46.1",
+    "eslint": "8.29.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "husky": "^8.0.0",
+    "prettier": "^2.8.1"
+  },
+  "dependencies": {
+    "jsonc-eslint-parser": "^2.1.0"
+  }
+}

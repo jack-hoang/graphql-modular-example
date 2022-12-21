@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["node"],
+    "outDir": "dist/tsc"
+  },
+  "exclude": ["jest.config.ts", "**/*.test.ts"],
+  "include": ["src/**/*.ts"]
+}

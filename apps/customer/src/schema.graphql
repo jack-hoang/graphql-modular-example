@@ -1,0 +1,67 @@
+type Customer {
+  id: ID!
+  username: String!
+  givenName: String!
+  surname: String!
+  gender: String!
+  addresses: [Address]
+  phones: [Phone]
+  emails: [Email]
+}
+
+type Address {
+  street: String!
+  city: String!
+  state: String!
+  zip: String!
+}
+
+type Phone {
+  number: String!
+  type: String!
+}
+
+type Email {
+  address: String!
+  type: String!
+}
+
+input AddressInput {
+  street: String!
+  city: String!
+  state: String!
+  zip: String!
+}
+
+input PhoneInput {
+  number: String!
+  type: String!
+}
+
+input EmailInput {
+  address: String!
+  type: String!
+}
+
+input AddCustomerInput {
+  username: String!
+  givenName: String!
+  surname: String!
+  gender: String
+  addresses: [AddressInput!]
+  phones: [PhoneInput!]
+  emails: [EmailInput!]
+}
+
+type Query {
+  customer(id: ID!): Customer
+}
+
+type Mutation {
+  addCustomer(input: AddCustomerInput): Customer
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "module": "CommonJS",
+    "types": ["jest", "node"],
+    "outDir": "dist/tsc"
+  },
+  "include": ["src/**/*.ts", "src/**/*.js", "./*.js"]
+}
