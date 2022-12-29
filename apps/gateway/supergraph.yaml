@@ -1,0 +1,10 @@
+federation_version: 2
+subgraphs:
+  account:
+    routing_url: http://localhost:4001
+    schema:
+      file: ../account/dist/publish/schema.graphql
+  customer:
+    routing_url: http://localhost:4002
+    schema:
+      file: ../customer/dist/publish/schema.graphql
