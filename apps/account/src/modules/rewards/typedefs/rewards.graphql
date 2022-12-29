@@ -1,0 +1,4 @@
+type Rewards {
+  id: ID!
+  pointsBalance: Float
+}
