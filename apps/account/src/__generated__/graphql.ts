@@ -23,6 +23,12 @@ export type Account = {
   rewards?: Maybe<Rewards>;
 };
 
+export type Customer = {
+  __typename?: 'Customer';
+  accounts: Array<Account>;
+  id: Scalars['ID'];
+};
+
 export type Query = {
   __typename?: 'Query';
   account?: Maybe<Account>;
@@ -115,6 +121,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = ResolversObject<{
   Account: ResolverTypeWrapper<Account>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  Customer: ResolverTypeWrapper<Customer>;
   Float: ResolverTypeWrapper<Scalars['Float']>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
@@ -127,6 +134,7 @@ export type ResolversTypes = ResolversObject<{
 export type ResolversParentTypes = ResolversObject<{
   Account: Account;
   Boolean: Scalars['Boolean'];
+  Customer: Customer;
   Float: Scalars['Float'];
   ID: Scalars['ID'];
   Int: Scalars['Int'];
@@ -143,6 +151,15 @@ export type AccountResolvers<
   balance?: Resolver<Maybe<ResolversTypes['Float']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   rewards?: Resolver<Maybe<ResolversTypes['Rewards']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+}>;
+
+export type CustomerResolvers<
+  ContextType = GraphQLModules.Context,
+  ParentType extends ResolversParentTypes['Customer'] = ResolversParentTypes['Customer'],
+> = ResolversObject<{
+  accounts?: Resolver<Array<ResolversTypes['Account']>, ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
@@ -164,6 +181,7 @@ export type RewardsResolvers<
 
 export type Resolvers<ContextType = GraphQLModules.Context> = ResolversObject<{
   Account?: AccountResolvers<ContextType>;
+  Customer?: CustomerResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Rewards?: RewardsResolvers<ContextType>;
 }>;

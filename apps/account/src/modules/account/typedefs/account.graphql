@@ -2,9 +2,14 @@ type Query {
   account(id: ID!): Account
 }
 
-type Account {
+type Account @key(fields: "id") {
   id: ID!
   accountNumber: Int!
   balance: Float
   rewards: Rewards
+}
+
+type Customer @key(fields: "id") {
+  id: ID!
+  accounts: [Account!]!
 }

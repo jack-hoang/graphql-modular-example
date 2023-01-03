@@ -33,7 +33,8 @@
     "dotenv": "^16.0.3",
     "graphql": "16.6.0",
     "graphql-modules": "^2.1.0",
-    "graphql-tag": "2.12.6"
+    "graphql-tag": "2.12.6",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@graphql-codegen/add": "^3.2.3",

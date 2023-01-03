@@ -1,9 +1,10 @@
 import { AccountModule } from '../__generated__/module-types';
+import { AccountDatasource } from '../providers/AccountDatasource';
 
 export const resolvers: AccountModule.Resolvers = {
   Query: {
-    account: async (_, { id }, ctx) => {
-      const account = await ctx.datasources.accountDatasource.getAccountById(id);
+    account: async (_, { id }, { injector }) => {
+      const account = await injector.get(AccountDatasource).getAccountById(id);
       return account;
     },
   },

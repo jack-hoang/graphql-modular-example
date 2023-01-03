@@ -1,7 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 
-import { AccountContext } from './AccountContext';
 import { application } from './application';
 
 const server = new ApolloServer({
@@ -21,9 +20,6 @@ const server = new ApolloServer({
 });
 
 startStandaloneServer(server, {
-  context: async ({ req }) => {
-    return new AccountContext({ req, server });
-  },
   listen: { port: 4001 },
 }).then(({ url }) => {
   // eslint-disable-next-line no-console
