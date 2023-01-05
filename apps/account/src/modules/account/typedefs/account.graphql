@@ -8,8 +8,3 @@ type Account @key(fields: "id") {
   balance: Float
   rewards: Rewards
 }
-
-type Customer @key(fields: "id") {
-  id: ID!
-  accounts: [Account!]!
-}

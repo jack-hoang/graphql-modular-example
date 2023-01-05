@@ -5,22 +5,22 @@ export namespace AccountModule {
   interface DefinedFields {
     Query: 'account';
     Account: 'id' | 'accountNumber' | 'balance' | 'rewards';
-    Customer: 'id' | 'accounts';
   }
 
   export type Query = Pick<Types.Query, DefinedFields['Query']>;
   export type Account = Pick<Types.Account, DefinedFields['Account']>;
   export type Rewards = Types.Rewards;
-  export type Customer = Pick<Types.Customer, DefinedFields['Customer']>;
+
+  export type Scalars = Pick<Types.Scalars, '_FieldSet'>;
+  export type _FieldSetScalarConfig = Types._FieldSetScalarConfig;
 
   export type QueryResolvers = Pick<Types.QueryResolvers, DefinedFields['Query']>;
   export type AccountResolvers = Pick<Types.AccountResolvers, DefinedFields['Account'] | '__isTypeOf'>;
-  export type CustomerResolvers = Pick<Types.CustomerResolvers, DefinedFields['Customer'] | '__isTypeOf'>;
 
   export interface Resolvers {
     Query?: QueryResolvers;
     Account?: AccountResolvers;
-    Customer?: CustomerResolvers;
+    _FieldSet?: Types.Resolvers['_FieldSet'];
   }
 
   export interface MiddlewareMap {
@@ -37,11 +37,6 @@ export namespace AccountModule {
       accountNumber?: gm.Middleware[];
       balance?: gm.Middleware[];
       rewards?: gm.Middleware[];
-    };
-    Customer?: {
-      '*'?: gm.Middleware[];
-      id?: gm.Middleware[];
-      accounts?: gm.Middleware[];
     };
   }
 }

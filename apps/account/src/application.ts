@@ -5,10 +5,11 @@ import { mergeResolvers } from '@graphql-tools/merge';
 import { createApplication } from 'graphql-modules';
 
 import { AccountModule } from './modules/account';
+import { CustomerModule } from './modules/customer';
 import { RewardsModule } from './modules/rewards';
 
 export const application = createApplication({
-  modules: [AccountModule, RewardsModule],
+  modules: [AccountModule, CustomerModule, RewardsModule],
   schemaBuilder(input) {
     return buildSubgraphSchema({
       typeDefs: input.typeDefs,
