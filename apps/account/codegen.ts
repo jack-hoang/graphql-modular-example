@@ -12,6 +12,9 @@ const config: CodegenConfig = {
       config: {
         useIndexSignature: true,
         contextType: 'GraphQLModules.Context',
+        enumValues: {
+          MembershipLevel: '../modules/rewards/enums/MembershipLevel#MembershipLevel',
+        },
       },
       plugins: [
         {

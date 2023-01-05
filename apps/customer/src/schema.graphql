@@ -1,6 +1,6 @@
 type Customer @key(fields: "id") {
   id: ID!
-  username: String!
+  username: String! @shareable
   givenName: String!
   surname: String!
   gender: String!

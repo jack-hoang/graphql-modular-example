@@ -1,0 +1,41 @@
+extend type Query {
+  customersByLevel(input: CustomersByLevelInput!): CustomersByLevelResponse
+}
+
+type ResponseError {
+  code: String!
+  httpStatus: Int
+  message: String
+}
+
+union CustomersByLevelResponse = CustomersByLevelConnection | ResponseError
+
+type Customer @key(fields: "id") {
+  id: ID!
+  username: String! @external
+  accounts: [Account!]!
+  membershipLevel: MembershipLevel
+}
+
+enum MembershipLevel {
+  SILVER
+  GOLD
+  PLATINUM
+}
+
+input CustomersByLevelInput {
+  membershipLevel: MembershipLevel!
+}
+
+type CustomersByLevelConnection {
+  total: Int!
+  edges: [CustomersByLevelEdge]
+}
+
+type CustomersByLevelEdge {
+  node: CustomersByLevelNode
+}
+
+type CustomersByLevelNode {
+  customer: Customer @provides(fields: "username")
+}
