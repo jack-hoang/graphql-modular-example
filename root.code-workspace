@@ -8,10 +8,16 @@
 		},
 		{
 			"path": "apps/gateway"
+		},
+		{
+			"path": "testing"
 		}
 	],
 	"settings": {
 		"editor.formatOnSave": true,
+		"jest.disabledWorkspaceFolders": [
+			"testing"
+		],
 	},
 	"extensions": {
 		"recommendations": [

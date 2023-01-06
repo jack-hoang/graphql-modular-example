@@ -129,5 +129,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Composed superrgraph schema
+# Composed supergraph schema
 apps/gateway/src/supergraph.graphql
+
+# Karate
+testing/functional/karate*.jar
+target/
