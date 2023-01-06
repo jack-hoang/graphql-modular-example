@@ -5,8 +5,8 @@ export const resolvers: RewardsModule.Resolvers = {
     id(parent) {
       return parent.id;
     },
-    pointsBalance() {
-      return Math.floor(Math.random() * 100000);
+    pointsBalance(parent) {
+      return parent?.pointsBalance ?? Math.floor(Math.random() * 100000);
     },
   },
 };

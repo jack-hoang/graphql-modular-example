@@ -19,7 +19,7 @@ export const resolvers: AccountModule.Resolvers = {
       return parent.balance ?? null;
     },
     rewards(parent) {
-      return { id: `${parent.id}-rewards` };
+      return parent.rewards ?? null;
     },
   },
 };
